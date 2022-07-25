@@ -35,12 +35,34 @@ public class FilterAndCount {
         Collection<People> people = Arrays.asList(
                 new People("Вася", 16, Sex.MAN),
                 new People("Петя", 23, Sex.MAN),
+                new People("Дима", 19, Sex.MAN),
                 new People("Елена", 42, Sex.WOMAN),
                 new People("Иван Иванович", 69, Sex.MAN)
         );
 
         // Выбрать мужчин-военообязанных
-        //TODO: to be continue =]===>
+        Collection<People> peopleWar = people
+                .stream()
+                .filter((p) -> p.getAge() >= 18 && p.getAge() < 27 && p.getSex() == Sex.MAN)
+                .collect(Collectors.toList());
+        System.out.println("peopleWar = " + peopleWar);
+
+        // Найти средний возраст среди мужчин
+        double manAverageAge = people
+                .stream()
+                .filter(p -> p.getSex() == Sex.MAN)
+                .mapToInt(People::getAge)
+                .average()
+                .getAsDouble();
+        System.out.println("manAverageAge = " + manAverageAge);
+
+        // Найти кол-во потенциально работоспосбных людей в выборке (т.е. от 18 лет и учитывая что женщины выходят в 55 лет, а мужчина в 60)
+        long peopleWhoCanWork = people
+                .stream()
+                .filter(p -> p.getAge() >= 18)
+                .filter(p -> (p.getSex() == Sex.WOMAN && p.getAge() <55) || (p.getSex() == Sex.MAN && p.getAge() < 60))
+                .count();
+        System.out.println("peopleWhoCanWork = " + peopleWhoCanWork);
     }
 
     private enum Sex {
