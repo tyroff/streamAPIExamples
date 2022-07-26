@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UseDistinct {
+public class Distinct {
     private static void testDistinct() {
         // distinct возвращает stream без дубликатов, при этом для упорядоченного стрима
         // (например, коллекция на основе list) порядок стабилен, для неупорядоченного — порядок не гарантируется.

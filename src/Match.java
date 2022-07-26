@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Collection;
 
-public class UseMatch {
+public class Match {
     // anyMatch	- Возвращает true, если условие выполняется хотя бы для одного элемента
     // noneMatch - Возвращает true, если условие не выполняется ни для одного элемента
     // allMatch	- Возвращает true, если условие выполняется для всех элементов

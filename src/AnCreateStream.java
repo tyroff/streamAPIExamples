@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class CreateStream {
+public class AnCreateStream {
     public static void main(String[] args) throws IOException {
         System.out.println("Test build Stream start");
 

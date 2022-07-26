@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class UseSorted {
+public class Sorted {
 
     private static void testSorted() {
         Collection<String> collection = Arrays.asList("a1", "a4", "a3", "a2", "a1", "a4");
